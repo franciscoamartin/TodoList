@@ -1,16 +1,10 @@
-import React from "react";
-import { Todo } from "../models/Todo";
+import React , { useContext }from "react";
+import { TodoContext } from "../contexts/TodoContext";
+import { TodoContextType } from "../contexts/TodoContextType";
 import TodoListItem from "./TodoListItem";
 
 const TodoList = () => {
-  const todos: Todo[] = [
-    {
-      id: 1,
-      title: "Ir no supermercado",
-      done: false,
-    },
-    { id: 2, title: "Ir no escritório", done: false },
-  ];
+  const {todos} = useContext<TodoContextType>(TodoContext);
   return (
     <table className="uk-table">
       <caption>Lista de tarefas</caption>
